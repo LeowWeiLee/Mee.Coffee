@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mee.Coffee - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="mee.coffee-logo.jpg" alt="Mee.Coffee Logo" class="logo">
+            <h1>Mee.Coffee</h1>
+            <nav>
+                <div class="burger-menu">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="menu-items">
+                    <a href="#home" class="active">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#products">Products</a>
+                </div>
+            </nav>
+            
+        </div>
+    </header>
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Welcome to Mee.Coffee</h2>
+            <p>Home Based Business, Grab Food at Toa Payoh, Serving you best coffee and toast.
+
+
+
+
+            </p>
+            
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+    </section>
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>We are Homebased business, and we are available on GrabFood.</p>
+        </div>
+        <img src="mee.cofee-about.jpeg" alt="About Mee.Coffee" class="about-image">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/MeeCoffeeFB" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/mee.coffee_sg" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form id="contactForm" action="#" method="POST">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required><br><br>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" required><br><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" placeholder="Enter your message here..." required></textarea><br><br>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+    <section id="products" class="products">
+        <div class="container">
+            <h2>Our Products</h2>
+            <!-- Product cards will go here -->
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/MeeCoffeeFB" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/mee.coffee_sg" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="copyright">© 2024 Mee.Coffee. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    document.querySelector('.burger-menu').addEventListener('click', function() {
+    this.classList.toggle('active');
+    document.querySelector('.menu-items').classList.toggle('active');
+    });
+
+
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the form from submitting
+
+    // Get form data
+    var fullName = document.getElementById("fullname").value;
+    var email = document.getElementById("email").value;
+    var mobile = document.getElementById("mobile").value;
+    var message = document.getElementById("message").value;
+
+    // Construct WhatsApp message
+    var whatsappMessage = "Full Name: " + fullName + "%0A";
+    whatsappMessage += "Email: " + email + "%0A";
+    whatsappMessage += "Mobile Number: " + mobile + "%0A";
+    whatsappMessage += "Message: " + message;
+
+    // Open WhatsApp with the message
+    window.open("https://wa.me/+6591395169?text=" + whatsappMessage, "_blank");
+    });
+
+    </script>
+</body>
+</html>
